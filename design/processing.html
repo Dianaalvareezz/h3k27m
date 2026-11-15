@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>H3K27M Minimal Analyzer - Analyzing...</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Custom Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              navy: '#0f172a',
+              blue: '#1e56a0',
+              slate: '#475569',
+              muted: '#94a3b8',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom CSS Styles -->
+<style data-purpose="base-styling">
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #ffffff;
+      color: #0f172a;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+<style data-purpose="spinner-animation">
+    @keyframes spin-smooth {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .spinner-circle {
+      animation: spin-smooth 0.85s linear infinite;
+    }
+  </style>
+<!-- END: Custom CSS Styles -->
+</head>
+<body class="min-h-screen bg-white px-6 selection:bg-blue-100 selection:text-brand-blue flex flex-col items-center">
+<!-- BEGIN: MainContent -->
+<main class="w-full flex flex-col items-center pt-20 max-w-4xl mx-auto" data-purpose="loading-view">
+  <!-- Header Title -->
+  <div class="w-full flex justify-center items-center">
+    <h1 class="text-4xl md:text-[40px] font-bold tracking-tight text-[#0f172a] text-center select-none">
+      H3K27M
+    </h1>
+  </div>
+
+  <!-- Loading Spinner with exact 120px gap below title -->
+  <div class="mt-[120px] flex flex-col items-center" data-purpose="progress-indicator">
+    <!-- Loading Spinner -->
+    <div aria-label="Loading" class="w-12 h-12 flex items-center justify-center" role="status">
+      <svg class="spinner-circle w-12 h-12" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <!-- Faint background track -->
+        <circle cx="24" cy="24" r="20" stroke="#e2e8f0" stroke-width="3.5"></circle>
+        <!-- Active rotating blue arc matching brand blue -->
+        <path d="M 24 4 A 20 20 0 0 1 44 24" stroke="#1e56a0" stroke-linecap="round" stroke-width="3.5"></path>
+      </svg>
+    </div>
+    <!-- Loading Status Text with 24px gap below spinner -->
+    <p class="mt-6 text-[17px] font-normal tracking-normal text-[#475569] text-center">
+      Analyzing sequence...
+    </p>
+  </div>
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: MainFooter -->
+<footer class="w-full mt-[200px] pb-8 text-center" data-purpose="legal-disclaimer">
+<p class="text-[13px] text-[#94a3b8] font-normal tracking-normal">
+      Educational demo – not for clinical use.
+    </p>
+</footer>
+<!-- END: MainFooter -->
+
+
+
+
+</body></html>

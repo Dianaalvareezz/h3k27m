@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>H3K27M Sequence Analyzer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#1e56a0',
+              hover: '#16437e',
+              active: '#113463',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #ffffff;
+      color: #1e293b;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-white flex flex-col justify-between py-16 px-6">
+  <main class="w-full max-w-2xl mx-auto flex flex-col items-center">
+    
+    <!-- Title & Subtitle Section -->
+    <header class="text-center w-full mb-10">
+      <h1 class="text-4xl font-bold tracking-tight text-slate-900 mb-3">
+        H3K27M
+      </h1>
+      <p class="text-lg text-slate-700 font-normal mb-2">
+        Check a histone H3.3 sequence for the H3 K27M mutation
+      </p>
+      <p class="text-sm text-slate-500 font-normal">
+        Your sequence is compared with the built-in normal human histone H3.3 reference.
+      </p>
+    </header>
+
+    <!-- Main Form Section -->
+    <section class="w-full flex flex-col">
+      <label for="sequence-input" class="text-sm font-medium text-slate-800 mb-2.5">
+        Paste histone H3.3 sequence
+      </label>
+      
+      <textarea 
+        id="sequence-input" 
+        rows="9" 
+        placeholder="Paste your sequence here" 
+        class="w-full p-4 text-sm font-mono bg-white border border-slate-300 rounded-md shadow-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand transition duration-150 ease-in-out resize-none"
+      ></textarea>
+
+      <!-- Note directly below text box -->
+      <p class="text-xs text-slate-500 mt-2.5 leading-relaxed">
+        This tool checks histone H3.3 (H3-3A) only. H3 K27M can also occur in histone H3.1, which is not analyzed.
+      </p>
+
+      <!-- Primary Action Button -->
+      <div class="mt-8 flex justify-center w-full">
+        <button 
+          type="button" 
+          class="w-full sm:w-auto px-8 py-3.5 bg-[#1e56a0] hover:bg-[#16437e] active:bg-[#113463] text-white text-base font-medium rounded-md shadow-sm transition-colors duration-150 ease-in-out text-center cursor-pointer"
+        >
+          Analyze sequence
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center pt-16 pb-4">
+    <p class="text-xs text-slate-400">
+      Educational demo – not for clinical use.
+    </p>
+  </footer>
+</body>
+</html>
